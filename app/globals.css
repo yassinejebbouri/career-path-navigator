@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 215 28% 17%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 215 28% 17%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 220 14% 80%;
+  --accent-foreground: 215 28% 17%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 215 28% 17%;
+  --radius: 0.5rem;
+
+  /* Skill type colors - updated to match the image */
+  --technology-bg: 190 95% 95%;
+  --technology-border: 190 95% 80%;
+  --technology-text: 190 95% 30%;
+
+  --softskill-bg: 40 95% 95%;
+  --softskill-border: 40 95% 80%;
+  --softskill-text: 40 95% 30%;
+
+  --hardskill-bg: 270 95% 95%;
+  --hardskill-border: 270 95% 80%;
+  --hardskill-text: 270 95% 30%;
+
+  --concept-bg: 270 95% 95%;
+  --concept-border: 270 95% 80%;
+  --concept-text: 270 95% 30%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
+}
+
+.subtle-gradient {
+  background: linear-gradient(135deg, hsl(215 28% 17% / 0.9) 0%, hsl(215 28% 25% / 0.9) 100%);
+}
+
+.react-flow__node {
+  padding: 10px;
+  border-radius: 5px;
+  width: 150px;
+  font-size: 12px;
+  text-align: center;
+  border-width: 1px;
+}
+
+.react-flow__node-hardskill {
+  background-color: hsl(var(--hardskill-bg));
+  border-color: hsl(var(--hardskill-border));
+  color: hsl(var(--hardskill-text));
+}
+
+.react-flow__node-technology {
+  background-color: hsl(var(--technology-bg));
+  border-color: hsl(var(--technology-border));
+  color: hsl(var(--technology-text));
+}
+
+.react-flow__node-softskill {
+  background-color: hsl(var(--softskill-bg));
+  border-color: hsl(var(--softskill-border));
+  color: hsl(var(--softskill-text));
+}
+
+.react-flow__node-concept {
+  background-color: hsl(var(--concept-bg));
+  border-color: hsl(var(--concept-border));
+  color: hsl(var(--concept-text));
+}
+
+.react-flow__edge-path {
+  stroke: #64748b;
+  stroke-width: 1.5;
+}
+
+.react-flow__node.selected {
+  box-shadow: 0 0 0 2px #334155;
+}
+
+/* Remove the Tailwind classes that are overriding our custom styles */
+.skill-badge-hardskill {
+  background-color: hsl(var(--hardskill-bg));
+  border-color: hsl(var(--hardskill-border));
+  color: hsl(var(--hardskill-text));
+}
+
+.skill-badge-technology {
+  background-color: hsl(var(--technology-bg));
+  border-color: hsl(var(--technology-border));
+  color: hsl(var(--technology-text));
+}
+
+.skill-badge-softskill {
+  background-color: hsl(var(--softskill-bg));
+  border-color: hsl(var(--softskill-border));
+  color: hsl(var(--softskill-text));
+}
+
+.skill-badge-concept {
+  background-color: hsl(var(--concept-bg));
+  border-color: hsl(var(--concept-border));
+  color: hsl(var(--concept-text));
+}
+
+.auth-card {
+  @apply w-full max-w-md overflow-hidden rounded-lg shadow-md;
+}
+
+.auth-card-header {
+  @apply p-6 text-center subtle-gradient text-white;
+}
+
+.auth-card-body {
+  @apply p-6 bg-white;
+}
+
+.auth-input {
+  @apply w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
+}
+
+.auth-button {
+  @apply w-full py-3 rounded-lg font-medium text-white bg-primary hover:bg-primary/90 transition-colors;
+}
+
+.auth-link {
+  @apply text-primary hover:text-primary/80 font-medium transition-colors;
+}
+
+.page-header {
+  @apply text-3xl font-bold mb-8 text-center text-primary capitalize;
+}
+
+.job-card {
+  @apply h-full flex flex-col overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100;
+}
+
+.job-card-header {
+  @apply p-4 bg-slate-100 text-slate-800 border-b border-slate-200;
+}
+
+.job-card-body {
+  @apply p-4 bg-white flex-grow;
+}
+
+.job-card-footer {
+  @apply p-4 bg-white border-t border-gray-100;
+}
+
+.capitalize-words {
+  text-transform: capitalize;
+}
+
+.feature-card {
+  @apply p-5 rounded-lg border transition-all hover:shadow-sm;
+}
+
+.feature-card-purple {
+  @apply bg-purple-50 border-purple-100;
+}
+
+.feature-card-cyan {
+  @apply bg-cyan-50 border-cyan-100;
+}
+
+.feature-card-amber {
+  @apply bg-amber-50 border-amber-100;
+}
+
+.feature-title {
+  @apply font-semibold mb-2;
+}
+
+.feature-title-purple {
+  @apply text-purple-700;
+}
+
+.feature-title-cyan {
+  @apply text-cyan-700;
+}
+
+.feature-title-amber {
+  @apply text-amber-700;
+}
+
+.welcome-card {
+  @apply w-full max-w-3xl overflow-hidden rounded-lg shadow-md border border-gray-100;
+}
+
+.welcome-header {
+  @apply p-6 text-center bg-slate-50 border-b border-slate-100;
+}
+
+.welcome-body {
+  @apply p-6 bg-white;
+}
+
+.welcome-footer {
+  @apply p-6 bg-slate-50 border-t border-slate-100 flex justify-center;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: white;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  max-width: 200px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Update the node colors in the D3 graph */
+.node-hardskill circle {
+  fill: #d8b4fe; /* Purple for hard skills */
+}
+
+.node-technology circle {
+  fill: #67e8f9; /* Cyan for technology */
+}
+
+.node-softskill circle {
+  fill: #fcd34d; /* Yellow for soft skills */
+}
+
+.node-concept circle {
+  fill: #d8b4fe; /* Purple for concepts */
+}
+
+.node text {
+  font-size: 10px;
+  text-anchor: middle;
+  fill: #4b5563;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: 0.6;
+  stroke-width: 2px;
+}
+
+.link.predicted {
+  stroke-dasharray: 5, 5;
+}
