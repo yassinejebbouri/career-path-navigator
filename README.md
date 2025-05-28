@@ -215,43 +215,7 @@ career-path-navigator/
 | POST | `/generate-path` | Generate learning path for a job |
 | GET | `/health` | Python service health check |
 
-## 🧪 Development Tools
 
-The project includes several debugging and development tools:
-
-- **Debug Pages**: Located at `/debug` for testing components and services
-- **Health Checks**: Monitor the status of all services
-- **ReactFlow Test**: Test graph visualization components
-- **Environment Variable Inspector**: Check configuration in development
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork the Repository**
-2. **Create a Feature Branch**
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Make Your Changes**
-4. **Commit Your Changes**
-   ```bash
-   git commit -m 'Add some amazing feature'
-   ```
-5. **Push to the Branch**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-6. **Open a Pull Request**
-
-### Code Style Guidelines
-
-- Follow the existing TypeScript and React patterns
-- Use Prettier for code formatting
-- Follow the component structure established in the project
-- Write meaningful commit messages
-
-## 🐛 Troubleshooting
 
 ### Common Issues
 
@@ -270,6 +234,4 @@ We welcome contributions! Please follow these steps:
    - Check Firebase project settings
    - Ensure authentication methods are enabled
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
