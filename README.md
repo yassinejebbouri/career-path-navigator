@@ -237,3 +237,4 @@ career-path-navigator/
 ### Note
 
 Notebooks containing the clustering logic and the learning path generation are also included as .ipynb files.
+The implementation report can be found under the file: FINAL_CAPSTONE_REPORT.pdf
